@@ -21,12 +21,13 @@
 // bonus worth 100 points
 
 const colors ={
-    player:'#FFFFFF',
+    // player:'#FFFFFF',
+    player:'#8F3A84FF',
     laser:'#22F701FF',
     enemy:'#F7A601',
     enemyFire: '#CE0D0D',
     bonus:'#F1F14C',
-    background: '##3A6D8F'
+    background: '#3A6D8F'
 }
 
 class Game {
@@ -52,6 +53,7 @@ class Game {
 
         this.player= new Player(playerLocation, playerSize)
         this.addBody(this.player)
+        console.log('size',playerSize, 'center',this.player.center, 'colors.player',colors.player,'colors.background',colors.background)
     }
     addBody(body){
     this.bodies.push(body)
@@ -122,6 +124,7 @@ class Game {
         constructor(center, size) {
             this.center = center
             this.size = size
+            console.log(this.size)
             this.startingY = 0
             this.startingX = center.x
             // this.game = game;
@@ -149,7 +152,8 @@ class Game {
             screen.fillStyle = colors.player
             screen.fillRect(
                 this.center.x, this.center.y, this.size.width, this.size.height)
-        }
+                console.log(this.size.width)
+            }
     }
 
     class Enemy {
